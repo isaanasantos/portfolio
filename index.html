@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Isa Santos - Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  /* Reset básico */
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #fffbf5;
     color: #333;
     line-height: 1.6;
@@ -17,14 +17,26 @@
   header {
     background-color: #8a663f;
     color: #fffbf5;
-    padding: 20px 20px;
+    padding: 15px 20px;
     text-align: center;
   }
   header h1 { font-size: 2em; margin-bottom: 5px; }
-  header p { font-size: 1em; margin-bottom: 5px; }
+  header p { font-size: 1em; margin-bottom: 10px; }
+
+  .btn {
+    display: inline-block;
+    padding: 6px 15px;
+    background-color: #fffbf5;
+    color: #8a663f;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+  .btn:hover { background-color: #e6d9c3; }
 
   section {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 30px auto;
     padding: 0 20px;
   }
@@ -36,28 +48,59 @@
     margin-bottom: 20px;
   }
 
-  ul { list-style: none; padding-left: 0; }
-  ul li { margin-bottom: 10px; padding-left: 10px; position: relative; }
-  ul li::before {
-    content: "•";
-    color: #8a663f;
-    position: absolute;
-    left: 0;
+  .tickets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
   }
 
   .ticket {
-    background-color: #fffbf5;
-    border-left: 5px solid #8a663f;
-    padding: 20px;
-    margin: 15px 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     border-radius: 8px;
-    transition: transform 0.2s;
+    padding: 20px;
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .ticket:hover { transform: translateY(-3px); }
+  .ticket:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
 
-  .ticket h3 { color: #8a663f; margin-bottom: 10px; }
+  .ticket h3 { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+
+  .ticket .icon {
+    font-size: 1.5em;
+  }
+
   .ticket p { margin-bottom: 10px; }
+  .ticket ul { list-style: none; padding-left: 0; margin-bottom: 10px; }
+  .ticket ul li { position: relative; padding-left: 15px; margin-bottom: 8px; }
+  .ticket ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #8a663f;
+  }
+
+  /* Ticket type colors */
+  .password { border-left: 5px solid #8a663f; }
+  .performance { border-left: 5px solid #b08a5c; }
+  .feature { border-left: 5px solid #d1b38a; }
+  .bug { border-left: 5px solid #b08a5c; }
+  .billing { border-left: 5px solid #d1b38a; }
+
+  .copy-btn {
+    background-color: #8a663f;
+    color: #fffbf5;
+    padding: 5px 12px;
+    font-size: 0.85em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  .copy-btn:hover { background-color: #705031; }
 
   footer {
     text-align: center;
@@ -67,19 +110,6 @@
     border-top: 1px solid #8a663f;
     margin-top: 50px;
   }
-
-  /* Botões */
-  .btn {
-    display: inline-block;
-    padding: 8px 18px;
-    margin-top: 10px;
-    background-color: #8a663f;
-    color: #fffbf5;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.2s;
-  }
-  .btn:hover { background-color: #705031; }
 </style>
 </head>
 <body>
@@ -92,72 +122,154 @@
 
 <section>
   <h2>Simulated Tickets</h2>
+  <div class="tickets-grid">
 
-  <div class="ticket">
-    <h3>Ticket 001 – Login Issue</h3>
-    <p><strong>Issue:</strong> Customer cannot access web portal after multiple login attempts.</p>
-    <p><strong>Steps Taken:</strong></p>
-    <ul>
-      <li>Verified customer identity and account status.</li>
-      <li>Checked for active service outages affecting login.</li>
-      <li>Guided customer through password reset process.</li>
-      <li>Ensured account was unlocked and credentials updated.</li>
-    </ul>
-    <p><strong>Tools/Skills Applied:</strong> Zendesk, Email support, Troubleshooting, Communication, Problem-solving</p>
-    <p><strong>Resolution:</strong> Customer successfully logged in.</p>
-    <p><strong>Sample Reply:</strong> "Hello [Customer Name], your account has been successfully reset. Please try logging in and let us know if any issues remain."</p>
+    <!-- Ticket 001 -->
+    <div class="ticket password">
+      <h3><span class="icon">🔒</span> Password Reset via Phone</h3>
+      <p><strong>Issue:</strong> Customer called requesting password reset. Identity verification fails.</p>
+      <p><strong>Steps Taken:</strong></p>
+      <ul>
+        <li>Attempted to confirm identity through security questions.</li>
+        <li>Verification failed; escalated to Managers via Slack.</li>
+        <li>Managers informed CSM to contact customer directly.</li>
+        <li>Documented actions in ticketing system.</li>
+      </ul>
+      <p><strong>Tools/Skills Applied:</strong> Zendesk, Slack, Phone support, Escalation process, Communication</p>
+      <p><strong>Resolution:</strong> Customer contacted by CSM, password reset completed securely.</p>
+      <p><strong>Sample Reply:</strong> "Hello, following internal verification, your account reset has been completed by our CSM."</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <!-- Ticket 002 -->
+    <div class="ticket bug">
+      <h3><span class="icon">⚠️</span> Live Chat Application Issue</h3>
+      <p><strong>Issue:</strong> Customer reports an application bug during live chat session.</p>
+      <p><strong>Steps Taken:</strong></p>
+      <ul>
+        <li>Confirmed incident is ongoing from internal status page.</li>
+        <li>Informed customer and shared tracking link.</li>
+        <li>Asked if temporary workaround or help needed.</li>
+        <li>Logged all updates in ticket system.</li>
+      </ul>
+      <p><strong>Tools/Skills Applied:</strong> Live chat, Internal status tools, Communication, Customer support</p>
+      <p><strong>Resolution:</strong> Customer updated with incident tracking and workaround.</p>
+      <p><strong>Sample Reply:</strong> "We are aware of the current application issue. Here is the tracking link [link]."</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <!-- Ticket 003 -->
+    <div class="ticket performance">
+      <h3><span class="icon">💻</span> Performance Issue via Email</h3>
+      <p><strong>Issue:</strong> Customer reports app slowdown impacting productivity.</p>
+      <p><strong>Steps Taken:</strong></p>
+      <ul>
+        <li>Could not replicate issue internally initially.</li>
+        <li>Scheduled screen-share session with customer.</li>
+        <li>Confirmed CPU utilization at 100% continuously.</li>
+        <li>Documented findings and suggested workaround.</li>
+      </ul>
+      <p><strong>Tools/Skills Applied:</strong> Email, Task Manager, Troubleshooting, Screen-share, Problem-solving</p>
+      <p><strong>Resolution:</strong> Resource overload identified; workaround applied and escalated.</p>
+      <p><strong>Sample Reply:</strong> "During our session, we identified high CPU usage causing slowdown. Fix is in progress."</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <!-- Ticket 004-010 (criados com cores e ícones semelhantes) -->
+    <div class="ticket bug">
+      <h3><span class="icon">⚠️</span> Dashboard Loading Issue</h3>
+      <p><strong>Issue:</strong> Dashboard stuck loading.</p>
+      <ul>
+        <li>Checked permissions and server status.</li>
+        <li>Guided customer through browser cache clear.</li>
+        <li>Escalated to Tier 2.</li>
+      </ul>
+      <p><strong>Resolution:</strong> Tier 2 fixed backend; customer verified access.</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <div class="ticket feature">
+      <h3><span class="icon">✨</span> Feature Request</h3>
+      <p><strong>Issue:</strong> Customer requests new reporting feature.</p>
+      <ul>
+        <li>Gathered requirements and logged request.</li>
+        <li>Communicated estimated timeline.</li>
+      </ul>
+      <p><strong>Resolution:</strong> Submitted to product team.</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <div class="ticket bug">
+      <h3><span class="icon">⚠️</span> Integration Failure</h3>
+      <p><strong>Issue:</strong> Third-party sync fails.</p>
+      <ul>
+        <li>Checked API logs.</li>
+        <li>Renewed credentials and retested.</li>
+      </ul>
+      <p><strong>Resolution:</strong> Integration restored.</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <div class="ticket billing">
+      <h3><span class="icon">💰</span> Billing Query</h3>
+      <p><strong>Issue:</strong> Unexpected charges.</p>
+      <ul>
+        <li>Reviewed account history.</li>
+        <li>Explained charges clearly.</li>
+      </ul>
+      <p><strong>Resolution:</strong> Customer understood charges.</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <div class="ticket bug">
+      <h3><span class="icon">📱</span> Mobile App Crash</h3>
+      <p><strong>Issue:</strong> App crashes on launch.</p>
+      <ul>
+        <li>Checked device info, reinstalled app.</li>
+        <li>Logged bug to developers.</li>
+      </ul>
+      <p><strong>Resolution:</strong> Patch fixed crash.</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <div class="ticket performance">
+      <h3><span class="icon">📊</span> Data Export Issue</h3>
+      <p><strong>Issue:</strong> Cannot export large dataset.</p>
+      <ul>
+        <li>Tested smaller datasets.</li>
+        <li>Suggested batch export workaround.</li>
+      </ul>
+      <p><strong>Resolution:</strong> Export successful in batches.</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <div class="ticket feature">
+      <h3><span class="icon">🔑</span> Account Permissions</h3>
+      <p><strong>Issue:</strong> User cannot access modules.</p>
+      <ul>
+        <li>Reviewed roles and adjusted permissions.</li>
+        <li>Verified access with customer.</li>
+      </ul>
+      <p><strong>Resolution:</strong> Access granted.</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
   </div>
-
-  <div class="ticket">
-    <h3>Ticket 002 – Report Generation Error</h3>
-    <p><strong>Issue:</strong> Monthly report fails to generate for finance department.</p>
-    <p><strong>Steps Taken:</strong></p>
-    <ul>
-      <li>Replicated issue in test environment.</li>
-      <li>Checked user permissions and report configuration.</li>
-      <li>Cleared cache and retried report generation.</li>
-      <li>Escalated to Tier 2 for deeper technical review.</li>
-    </ul>
-    <p><strong>Tools/Skills Applied:</strong> Jira, Troubleshooting, Communication, Workflow Coordination</p>
-    <p><strong>Resolution:</strong> Issue resolved after Tier 2 intervention, report generated successfully.</p>
-    <p><strong>Sample Reply:</strong> "Hello [Customer Name], the report generation issue has been resolved. Please check your report and confirm everything looks correct."</p>
-  </div>
-
-  <div class="ticket">
-    <h3>Ticket 003 – Password Reset</h3>
-    <p><strong>Issue:</strong> Customer forgot password and is locked out of account.</p>
-    <p><strong>Steps Taken:</strong></p>
-    <ul>
-      <li>Verified customer identity using security questions.</li>
-      <li>Reset password through ticketing system.</li>
-      <li>Confirmed customer could log in successfully.</li>
-      <li>Provided tips for future password management.</li>
-    </ul>
-    <p><strong>Tools/Skills Applied:</strong> Zendesk, Email support, Customer Communication, Problem-solving</p>
-    <p><strong>Resolution:</strong> Customer access restored.</p>
-    <p><strong>Sample Reply:</strong> "Hi [Customer Name], your password has been reset, and you should now have access. Let us know if any issues persist."</p>
-  </div>
-
-  <div class="ticket">
-    <h3>Ticket 004 – Application Bug</h3>
-    <p><strong>Issue:</strong> Customer reports unexpected error when submitting form.</p>
-    <p><strong>Steps Taken:</strong></p>
-    <ul>
-      <li>Gathered screenshots and error logs from customer.</li>
-      <li>Tested form submission in staging environment.</li>
-      <li>Identified misconfiguration causing error.</li>
-      <li>Escalated to the developer team with detailed notes.</li>
-    </ul>
-    <p><strong>Tools/Skills Applied:</strong> Jira, Bug Reporting, Technical Troubleshooting, Communication</p>
-    <p><strong>Resolution:</strong> Bug fixed by the developer team, customer confirmed submission successful.</p>
-    <p><strong>Sample Reply:</strong> "Hello [Customer Name], the issue with the form has been resolved. Please try submitting again and let us know if it works."</p>
-  </div>
-
 </section>
 
 <footer>
-  Portfolio created to demonstrate practical application of support skills.
+  Portfolio created to demonstrate practical application support skills.
 </footer>
+
+<script>
+function copyText(btn) {
+  const reply = btn.previousElementSibling.innerText;
+  navigator.clipboard.writeText(reply).then(() => {
+    btn.innerText = "Copied!";
+    setTimeout(()=> btn.innerText = "Copy Reply", 1500);
+  });
+}
+</script>
 
 </body>
 </html>
