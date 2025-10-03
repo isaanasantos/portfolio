@@ -17,11 +17,12 @@
   header {
     background-color: #8a663f;
     color: #fffbf5;
-    padding: 15px 20px;
+    padding: 10px 20px;
     text-align: center;
   }
-  header h1 { font-size: 2em; margin-bottom: 5px; }
-  header p { font-size: 1em; margin-bottom: 10px; }
+  header h1 { font-size: 1.8em; margin-bottom: 3px; }
+  header p { font-size: 0.9em; margin-bottom: 5px; }
+  header p.note { font-size: 0.75em; margin-top: 3px; color: #fffbe0; }
 
   .btn {
     display: inline-block;
@@ -61,6 +62,7 @@
     background-color: #fff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
   }
   .ticket:hover {
     transform: translateY(-5px);
@@ -68,27 +70,12 @@
   }
 
   .ticket h3 { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-
-  .ticket .icon {
-    font-size: 1.5em;
-  }
+  .ticket .icon { font-size: 1.5em; }
 
   .ticket p { margin-bottom: 10px; }
   .ticket ul { list-style: none; padding-left: 0; margin-bottom: 10px; }
   .ticket ul li { position: relative; padding-left: 15px; margin-bottom: 8px; }
-  .ticket ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #8a663f;
-  }
-
-  /* Ticket type colors */
-  .password { border-left: 5px solid #8a663f; }
-  .performance { border-left: 5px solid #b08a5c; }
-  .feature { border-left: 5px solid #d1b38a; }
-  .bug { border-left: 5px solid #b08a5c; }
-  .billing { border-left: 5px solid #d1b38a; }
+  .ticket ul li::before { content: "•"; position: absolute; left: 0; color: #8a663f; }
 
   .copy-btn {
     background-color: #8a663f;
@@ -110,6 +97,36 @@
     border-top: 1px solid #8a663f;
     margin-top: 50px;
   }
+
+  /* Ticket type colors */
+  .password { border-left: 5px solid #8a663f; }
+  .performance { border-left: 5px solid #b08a5c; }
+  .feature { border-left: 5px solid #d1b38a; }
+  .bug { border-left: 5px solid #b08a5c; }
+  .billing { border-left: 5px solid #d1b38a; }
+  .partner { border-left: 5px solid #8a663f; }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 0.7em;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+
+  .easy { background-color: #8a663f; }
+  .medium { background-color: #b08a5c; }
+  .hard { background-color: #d1b38a; }
+
+  .low { background-color: #8a663f; }
+  .normal { background-color: #b08a5c; }
+  .high { background-color: #d1b38a; }
+  .urgent { background-color: #ff6b6b; }
+
 </style>
 </head>
 <body>
@@ -117,6 +134,7 @@
 <header>
   <h1>Isa Santos</h1>
   <p>Application Support / Customer Support Specialist</p>
+  <p class="note">Sample replies are shortened to fit page design. All would normally include "Hi [Customer Name]" and maintain professional, consistent communication.</p>
   <a class="btn" href="https://www.linkedin.com/in/aisacsantos/" target="_blank">LinkedIn</a>
 </header>
 
@@ -127,16 +145,14 @@
     <!-- Ticket 001 -->
     <div class="ticket password">
       <h3><span class="icon">🔒</span> Password Reset via Phone</h3>
-      <p><strong>Issue:</strong> Customer called requesting password reset. Identity verification fails.</p>
-      <p><strong>Steps Taken:</strong></p>
+      <span class="badge easy">Easy</span>
+      <span class="badge normal">Normal</span>
+      <p><strong>Issue:</strong> Customer requested password reset. Identity verification fails.</p>
       <ul>
-        <li>Attempted to confirm identity through security questions.</li>
+        <li>Attempted identity verification via security questions.</li>
         <li>Verification failed; escalated to Managers via Slack.</li>
-        <li>Managers informed CSM to contact customer directly.</li>
-        <li>Documented actions in ticketing system.</li>
+        <li>Managers informed CSM to contact customer.</li>
       </ul>
-      <p><strong>Tools/Skills Applied:</strong> Zendesk, Slack, Phone support, Escalation process, Communication</p>
-      <p><strong>Resolution:</strong> Customer contacted by CSM, password reset completed securely.</p>
       <p><strong>Sample Reply:</strong> "Hello, following internal verification, your account reset has been completed by our CSM."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
@@ -144,113 +160,152 @@
     <!-- Ticket 002 -->
     <div class="ticket bug">
       <h3><span class="icon">⚠️</span> Live Chat Application Issue</h3>
-      <p><strong>Issue:</strong> Customer reports an application bug during live chat session.</p>
-      <p><strong>Steps Taken:</strong></p>
+      <span class="badge medium">Medium</span>
+      <span class="badge high">High</span>
+      <p><strong>Issue:</strong> Customer reports an application bug.</p>
       <ul>
-        <li>Confirmed incident is ongoing from internal status page.</li>
+        <li>Confirmed incident is ongoing.</li>
         <li>Informed customer and shared tracking link.</li>
-        <li>Asked if temporary workaround or help needed.</li>
-        <li>Logged all updates in ticket system.</li>
+        <li>Asked if temporary workaround help needed.</li>
       </ul>
-      <p><strong>Tools/Skills Applied:</strong> Live chat, Internal status tools, Communication, Customer support</p>
-      <p><strong>Resolution:</strong> Customer updated with incident tracking and workaround.</p>
-      <p><strong>Sample Reply:</strong> "We are aware of the current application issue. Here is the tracking link [link]."</p>
+      <p><strong>Sample Reply:</strong> "We are aware of the current application issue. Here is the tracking link [link]. Please let us know if you require any temporary workaround."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
     <!-- Ticket 003 -->
     <div class="ticket performance">
       <h3><span class="icon">💻</span> Performance Issue via Email</h3>
+      <span class="badge hard">Hard</span>
+      <span class="badge urgent">Urgent</span>
       <p><strong>Issue:</strong> Customer reports app slowdown impacting productivity.</p>
-      <p><strong>Steps Taken:</strong></p>
       <ul>
         <li>Could not replicate issue internally initially.</li>
         <li>Scheduled screen-share session with customer.</li>
-        <li>Confirmed CPU utilization at 100% continuously.</li>
-        <li>Documented findings and suggested workaround.</li>
+        <li>Captured .HAR files for engineering analysis.</li>
+        <li>Confirmed high CPU usage via Task Manager.</li>
+        <li>Shared findings with engineering team and internal logs.</li>
       </ul>
-      <p><strong>Tools/Skills Applied:</strong> Email, Task Manager, Troubleshooting, Screen-share, Problem-solving</p>
-      <p><strong>Resolution:</strong> Resource overload identified; workaround applied and escalated.</p>
-      <p><strong>Sample Reply:</strong> "During our session, we identified high CPU usage causing slowdown. Fix is in progress."</p>
+      <p><strong>Sample Reply:</strong> "During our session, we captured .HAR files, which our engineering team analyzed. With them and our internal logs, we have detected the root cause of the issue and resolved it. Could you please retry on your end?"</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
-    <!-- Ticket 004-010 (criados com cores e ícones semelhantes) -->
+    <!-- Ticket 004 -->
     <div class="ticket bug">
       <h3><span class="icon">⚠️</span> Dashboard Loading Issue</h3>
-      <p><strong>Issue:</strong> Dashboard stuck loading.</p>
+      <span class="badge medium">Medium</span>
+      <span class="badge normal">Normal</span>
+      <p><strong>Issue:</strong> Dashboard stuck loading for multiple users.</p>
       <ul>
-        <li>Checked permissions and server status.</li>
-        <li>Guided customer through browser cache clear.</li>
-        <li>Escalated to Tier 2.</li>
+        <li>Checked server status and permissions.</li>
+        <li>Guided customer to clear browser cache.</li>
+        <li>Escalated to Tier 2 engineering team.</li>
       </ul>
-      <p><strong>Resolution:</strong> Tier 2 fixed backend; customer verified access.</p>
+      <p><strong>Sample Reply:</strong> "Hi, we have cleared the dashboard cache and escalated the issue. Please try again and let us know if the problem persists."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
+    <!-- Ticket 005 -->
     <div class="ticket feature">
-      <h3><span class="icon">✨</span> Feature Request</h3>
-      <p><strong>Issue:</strong> Customer requests new reporting feature.</p>
+      <h3><span class="icon">🔑</span> Account Permissions</h3>
+      <span class="badge easy">Easy</span>
+      <span class="badge low">Low</span>
+      <p><strong>Issue:</strong> User cannot access certain modules.</p>
       <ul>
-        <li>Gathered requirements and logged request.</li>
-        <li>Communicated estimated timeline.</li>
+        <li>Reviewed roles and updated permissions.</li>
+        <li>Verified access with the customer.</li>
       </ul>
-      <p><strong>Resolution:</strong> Submitted to product team.</p>
+      <p><strong>Sample Reply:</strong> "Hi, your account permissions have been updated. Please check access to the modules."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
-    <div class="ticket bug">
-      <h3><span class="icon">⚠️</span> Integration Failure</h3>
-      <p><strong>Issue:</strong> Third-party sync fails.</p>
-      <ul>
-        <li>Checked API logs.</li>
-        <li>Renewed credentials and retested.</li>
-      </ul>
-      <p><strong>Resolution:</strong> Integration restored.</p>
-      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
-    </div>
-
+    <!-- Ticket 006 -->
     <div class="ticket billing">
-      <h3><span class="icon">💰</span> Billing Query</h3>
-      <p><strong>Issue:</strong> Unexpected charges.</p>
+      <h3><span class="icon">💳</span> Billing Inquiry</h3>
+      <span class="badge easy">Easy</span>
+      <span class="badge normal">Normal</span>
+      <p><strong>Issue:</strong> Customer disputes an invoice.</p>
       <ul>
-        <li>Reviewed account history.</li>
-        <li>Explained charges clearly.</li>
+        <li>Reviewed billing history.</li>
+        <li>Clarified charges and adjustments.</li>
       </ul>
-      <p><strong>Resolution:</strong> Customer understood charges.</p>
+      <p><strong>Sample Reply:</strong> "Hi, we reviewed your invoice and adjusted charges accordingly. Please verify and confirm."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
-    <div class="ticket bug">
-      <h3><span class="icon">📱</span> Mobile App Crash</h3>
-      <p><strong>Issue:</strong> App crashes on launch.</p>
+    <!-- Ticket 007 -->
+    <div class="ticket password">
+      <h3><span class="icon">🔒</span> MFA Reset</h3>
+      <span class="badge medium">Medium</span>
+      <span class="badge high">High</span>
+      <p><strong>Issue:</strong> Customer cannot access account due to MFA issues.</p>
       <ul>
-        <li>Checked device info, reinstalled app.</li>
-        <li>Logged bug to developers.</li>
+        <li>Guided through MFA reset procedure.</li>
+        <li>Verified identity and re-enabled access.</li>
       </ul>
-      <p><strong>Resolution:</strong> Patch fixed crash.</p>
+      <p><strong>Sample Reply:</strong> "Hi, your multi-factor authentication has been reset. You can now access your account."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
+    <!-- Ticket 008 -->
+    <div class="ticket feature">
+      <h3><span class="icon">⚙️</span> Feature Request Guidance</h3>
+      <span class="badge easy">Easy</span>
+      <span class="badge low">Low</span>
+      <p><strong>Issue:</strong> Customer inquires about adding new reporting feature.</p>
+      <ul>
+        <li>Explained current capabilities.</li>
+        <li>Suggested workaround using existing features.</li>
+      </ul>
+      <p><strong>Sample Reply:</strong> "Hi, the requested reporting feature is not available yet. We suggest using current filters and exports as a workaround."</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <!-- Ticket 009 -->
     <div class="ticket performance">
       <h3><span class="icon">📊</span> Data Export Issue</h3>
-      <p><strong>Issue:</strong> Cannot export large dataset.</p>
+      <span class="badge medium">Medium</span>
+      <span class="badge normal">Normal</span>
+      <p><strong>Issue:</strong> Customer cannot export large dataset.</p>
       <ul>
         <li>Tested smaller datasets.</li>
         <li>Suggested batch export workaround.</li>
       </ul>
-      <p><strong>Resolution:</strong> Export successful in batches.</p>
+      <p><strong>Sample Reply:</strong> "Hi, for large datasets we recommend batch exports. Please try exporting in smaller batches."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
-    <div class="ticket feature">
-      <h3><span class="icon">🔑</span> Account Permissions</h3>
-      <p><strong>Issue:</strong> User cannot access modules.</p>
+    <!-- Ticket 010 -->
+    <div class="ticket bug">
+      <h3><span class="icon">⚠️</span> Mobile App Crash</h3>
+      <span class="badge hard">Hard</span>
+      <span class="badge high">High</span>
+      <p><strong>Issue:</strong> Mobile app crashes on launch.</p>
       <ul>
-        <li>Reviewed roles and adjusted permissions.</li>
-        <li>Verified access with customer.</li>
+        <li>Gathered device info and logs.</li>
+        <li>Guided user to reinstall app.</li>
+        <li>Reported bug; patch released.</li>
       </ul>
-      <p><strong>Resolution:</strong> Access granted.</p>
+      <p><strong>Sample Reply:</strong> "Hi, a patch has been released. Please update the app and retry."</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <!-- Ticket 011 -->
+    <div class="ticket partner">
+      <h3><span class="icon">📡</span> Partner / Carrier Issue</h3>
+      <span class="badge hard">Hard</span>
+      <span class="badge urgent">Urgent</span>
+      <p><strong>Issue:</strong> Customer reports service disruption in VOIP application.</p>
+      <ul>
+        <li>Investigated internally; confirmed issue external (carrier-related).</li>
+        <li>Logged incident in Jira for engineering visibility.</li>
+        <li>Placed ticket on hold and informed carrier.</li>
+        <li>Monitored carrier resolution progress.</li>
+        <li>Carrier resolved issue and provided RCA.</li>
+        <li>Reviewed and adjusted RCA internally.</li>
+        <li>Shared final RCA with customer ensuring clarity.</li>
+      </ul>
+      <p><strong>Tools/Skills Applied:</strong> Zendesk, Jira, Partner Communication, Problem-solving, RCA Review</p>
+      <p><strong>Sample Reply:</strong> "Hi, the VOIP disruption has been resolved in coordination with our partner. Attached is the RCA for your reference."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
