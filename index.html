@@ -4,16 +4,82 @@
 <meta charset="UTF-8">
 <title>Isa Santos - Portfolio</title>
 <style>
-  body { font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; margin: 0; padding: 0; }
-  header { background-color: #4CAF50; color: white; padding: 30px 20px; text-align: center; }
-  header h1 { margin: 0; font-size: 2em; }
-  header p { margin: 5px 0 0; font-size: 1em; }
-  section { padding: 20px; max-width: 900px; margin: 0 auto; }
-  h2 { border-bottom: 2px solid #4CAF50; padding-bottom: 5px; }
-  ul { list-style-type: square; margin-left: 20px; }
-  .ticket { background-color: white; border: 1px solid #ccc; border-left: 5px solid #4CAF50; padding: 15px; margin: 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-  .ticket h3 { margin-top: 0; color: #4CAF50; }
-  footer { text-align: center; padding: 20px; font-size: 0.9em; color: #666; }
+  /* Reset básico */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fffbf5;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: #8a663f;
+    color: #fffbf5;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  header h1 { font-size: 2.5em; margin-bottom: 10px; }
+  header p { font-size: 1.1em; margin-bottom: 5px; }
+
+  section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  h2 {
+    color: #8a663f;
+    border-bottom: 3px solid #8a663f;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+
+  ul { list-style: none; padding-left: 0; }
+  ul li { margin-bottom: 10px; padding-left: 10px; position: relative; }
+  ul li::before {
+    content: "•";
+    color: #8a663f;
+    position: absolute;
+    left: 0;
+  }
+
+  .ticket, .certificate {
+    background-color: #fffbf5;
+    border-left: 5px solid #8a663f;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  .ticket:hover, .certificate:hover { transform: translateY(-3px); }
+
+  .ticket h3, .certificate h3 { color: #8a663f; margin-bottom: 10px; }
+  .ticket p, .certificate p { margin-bottom: 5px; }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9em;
+    color: #666;
+    border-top: 1px solid #8a663f;
+    margin-top: 50px;
+  }
+
+  /* Botões para links externos */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #8a663f;
+    color: #fffbf5;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+  .btn:hover { background-color: #705031; }
 </style>
 </head>
 <body>
@@ -21,23 +87,48 @@
 <header>
   <h1>Isa Santos</h1>
   <p>Customer Support / Application Support Specialist</p>
-  <p>Welcome to my Public Portfolio. Thank you very much for your interest, I hope we get a chance to connect!</p>
+  <p>Welcome to my Public Portfolio. Thank you for your interest, I hope we get a chance to connect!</p>
+  <a class="btn" href="https://www.linkedin.com/in/aisacsantos/" target="_blank">LinkedIn</a>
 </header>
 
 <section>
   <h2>Profile</h2>
-  <p>Customer support professional with over 3 years of experience in customer-facing roles, trained in Zendesk and Jira. Completed Cybersecurity certification, combining technical knowledge with strong problem-solving skills and workflow management. Motivated to contribute as an Application Support Specialist.</p>
+  <p>Customer support professional with over 3 years of experience in customer-facing roles. Developed strong soft skills such as communication, empathy, problem-solving, and conflict resolution. Trained in ticketing systems and familiar with technical workflows. Motivated to contribute as an Application Support Specialist.</p>
 </section>
 
 <section>
   <h2>Skills</h2>
   <ul>
-    <li>Zendesk, Jira, Freshdesk</li>
-    <li>Ticket management & troubleshooting</li>
+    <li>Customer-facing support & problem-solving</li>
+    <li>Ticket management (Zendesk, Jira, Freshdesk)</li>
     <li>Cybersecurity fundamentals</li>
-    <li>Problem-solving & workflow management</li>
-    <li>Customer communication & empathy</li>
+    <li>Workflow coordination & teamwork</li>
+    <li>Effective communication & empathy</li>
   </ul>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <div class="certificate">
+    <h3>Cyber Security – Oxford Home Study Center (Apr 2025)</h3>
+    <p>Skills: Information Security, Security Management</p>
+  </div>
+  <div class="certificate">
+    <h3>Problem Solving – Oxford Home Study Center (Apr 2025)</h3>
+    <p>Skills: Problem Resolution</p>
+  </div>
+  <div class="certificate">
+    <h3>Communication Skills – Oxford Home Study Center (Mar 2025)</h3>
+    <p>Skills: Interpersonal Communication</p>
+  </div>
+  <div class="certificate">
+    <h3>Customer Services – Oxford Home Study Center (Mar 2025)</h3>
+    <p>Skills: Customer Support</p>
+  </div>
+  <div class="certificate">
+    <h3>Generative AI – Santander Open Academy (Mar 2025)</h3>
+    <p>Skills: Artificial Intelligence</p>
+  </div>
 </section>
 
 <section>
@@ -64,34 +155,12 @@
     <p><strong>Resolution:</strong> Access restored successfully</p>
   </div>
 
-  <div class="ticket">
-    <h3>Ticket 004 – Billing Discrepancy</h3>
-    <p><strong>Issue:</strong> Incorrect invoice total</p>
-    <p><strong>Steps:</strong> Reviewed account, identified duplicate charge, processed correction</p>
-    <p><strong>Resolution:</strong> Customer refunded and invoice corrected</p>
-  </div>
-
-  <div class="ticket">
-    <h3>Ticket 005 – System Access Issue</h3>
-    <p><strong>Issue:</strong> Cannot access reporting dashboard</p>
-    <p><strong>Steps:</strong> Checked user permissions, cleared cache, reassigned temporary access</p>
-    <p><strong>Resolution:</strong> Dashboard access restored</p>
-  </div>
-
-</section>
-
-<section>
-  <h2>Education & Certifications</h2>
-  <ul>
-    <li>Cybersecurity Certificate – IEFP, Sep 2025</li>
-    <li>Secondary Education in Tourism – ESCO, 2020</li>
-    <li>Communication Skills, Customer Service, Problem Solving – OHSC, 2025</li>
-  </ul>
 </section>
 
 <footer>
-  Contact: isa2002santos@gmail.com | +351 911 585 739
+  Portfolio created to demonstrate skills and certifications
 </footer>
 
 </body>
 </html>
+
