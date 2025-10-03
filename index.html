@@ -5,7 +5,7 @@
 <title>Isa Santos - Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin:0; padding:0; box-sizing:border-box; }
 
   body {
     font-family: 'Inter', sans-serif;
@@ -69,11 +69,11 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
 
-  .ticket h3 { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-  .ticket .icon { font-size: 1.5em; }
+  .ticket h3 { margin-bottom: 10px; display:flex; align-items:center; gap:10px; }
+  .ticket .icon { font-size:1.5em; }
 
   .ticket p { margin-bottom: 10px; }
-  .ticket ul { list-style: none; padding-left: 0; margin-bottom: 10px; }
+  .ticket ul { list-style: none; padding-left:0; margin-bottom: 10px; }
   .ticket ul li { position: relative; padding-left: 15px; margin-bottom: 8px; }
   .ticket ul li::before { content: "•"; position: absolute; left: 0; color: #8a663f; }
 
@@ -127,6 +127,8 @@
   .high { background-color: #d1b38a; }
   .urgent { background-color: #ff6b6b; }
 
+  .type { background-color: #705031; }
+  .involvement { background-color: #d1b38a; }
 </style>
 </head>
 <body>
@@ -147,7 +149,7 @@
       <h3><span class="icon">🔒</span> Password Reset via Phone</h3>
       <span class="badge easy">Easy</span>
       <span class="badge normal">Normal</span>
-      <p><strong>Issue:</strong> Customer requested password reset. Identity verification fails.</p>
+      <span class="badge type">Call</span>
       <ul>
         <li>Attempted identity verification via security questions.</li>
         <li>Verification failed; escalated to Managers via Slack.</li>
@@ -162,7 +164,7 @@
       <h3><span class="icon">⚠️</span> Live Chat Application Issue</h3>
       <span class="badge medium">Medium</span>
       <span class="badge high">High</span>
-      <p><strong>Issue:</strong> Customer reports an application bug.</p>
+      <span class="badge type">Livechat</span>
       <ul>
         <li>Confirmed incident is ongoing.</li>
         <li>Informed customer and shared tracking link.</li>
@@ -177,7 +179,8 @@
       <h3><span class="icon">💻</span> Performance Issue via Email</h3>
       <span class="badge hard">Hard</span>
       <span class="badge urgent">Urgent</span>
-      <p><strong>Issue:</strong> Customer reports app slowdown impacting productivity.</p>
+      <span class="badge type">Email</span>
+      <span class="badge involvement">Screenshare</span>
       <ul>
         <li>Could not replicate issue internally initially.</li>
         <li>Scheduled screen-share session with customer.</li>
@@ -190,26 +193,40 @@
     </div>
 
     <!-- Ticket 004 -->
-    <div class="ticket bug">
-      <h3><span class="icon">⚠️</span> Dashboard Loading Issue</h3>
-      <span class="badge medium">Medium</span>
-      <span class="badge normal">Normal</span>
-      <p><strong>Issue:</strong> Dashboard stuck loading for multiple users.</p>
+    <div class="ticket feature">
+      <h3><span class="icon">⚙️</span> Feature Request Guidance</h3>
+      <span class="badge easy">Easy</span>
+      <span class="badge low">Low</span>
+      <span class="badge type">Email</span>
       <ul>
-        <li>Checked server status and permissions.</li>
-        <li>Guided customer to clear browser cache.</li>
-        <li>Escalated to Tier 2 engineering team.</li>
+        <li>Explained current capabilities.</li>
+        <li>Suggested workaround using existing features.</li>
       </ul>
-      <p><strong>Sample Reply:</strong> "Hi, we have cleared the dashboard cache and escalated the issue. Please try again and let us know if the problem persists."</p>
+      <p><strong>Sample Reply:</strong> "Hi, the requested reporting feature is not available yet. We suggest using current filters and exports as a workaround."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
     <!-- Ticket 005 -->
-    <div class="ticket feature">
+    <div class="ticket billing">
+      <h3><span class="icon">💳</span> Billing Inquiry</h3>
+      <span class="badge easy">Easy</span>
+      <span class="badge normal">Normal</span>
+      <span class="badge type">Email</span>
+      <ul>
+        <li>Reviewed billing request.</li>
+        <li>Determined issue is outside our support scope.</li>
+        <li>Added ticket note and informed CSM, who will respond to customer.</li>
+      </ul>
+      <p><strong>Sample Reply:</strong> "Hi, your billing inquiry has been forwarded to our CSM team who will respond as soon as possible. Thank you for your patience."</p>
+      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
+    </div>
+
+    <!-- Ticket 006 -->
+    <div class="ticket password">
       <h3><span class="icon">🔑</span> Account Permissions</h3>
       <span class="badge easy">Easy</span>
       <span class="badge low">Low</span>
-      <p><strong>Issue:</strong> User cannot access certain modules.</p>
+      <span class="badge type">Call</span>
       <ul>
         <li>Reviewed roles and updated permissions.</li>
         <li>Verified access with the customer.</li>
@@ -218,26 +235,13 @@
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
-    <!-- Ticket 006 -->
-    <div class="ticket billing">
-      <h3><span class="icon">💳</span> Billing Inquiry</h3>
-      <span class="badge easy">Easy</span>
-      <span class="badge normal">Normal</span>
-      <p><strong>Issue:</strong> Customer disputes an invoice.</p>
-      <ul>
-        <li>Reviewed billing history.</li>
-        <li>Clarified charges and adjustments.</li>
-      </ul>
-      <p><strong>Sample Reply:</strong> "Hi, we reviewed your invoice and adjusted charges accordingly. Please verify and confirm."</p>
-      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
-    </div>
-
     <!-- Ticket 007 -->
     <div class="ticket password">
       <h3><span class="icon">🔒</span> MFA Reset</h3>
       <span class="badge medium">Medium</span>
       <span class="badge high">High</span>
-      <p><strong>Issue:</strong> Customer cannot access account due to MFA issues.</p>
+      <span class="badge type">Livechat</span>
+      <span class="badge involvement">Escalation 2nd</span>
       <ul>
         <li>Guided through MFA reset procedure.</li>
         <li>Verified identity and re-enabled access.</li>
@@ -248,38 +252,25 @@
 
     <!-- Ticket 008 -->
     <div class="ticket feature">
-      <h3><span class="icon">⚙️</span> Feature Request Guidance</h3>
-      <span class="badge easy">Easy</span>
-      <span class="badge low">Low</span>
-      <p><strong>Issue:</strong> Customer inquires about adding new reporting feature.</p>
+      <h3><span class="icon">⚙️</span> Feature Rollout Inquiry</h3>
+      <span class="badge medium">Medium</span>
+      <span class="badge normal">Normal</span>
+      <span class="badge type">Email</span>
       <ul>
-        <li>Explained current capabilities.</li>
-        <li>Suggested workaround using existing features.</li>
+        <li>Provided info about upcoming feature availability.</li>
+        <li>Shared documentation and guide links.</li>
       </ul>
-      <p><strong>Sample Reply:</strong> "Hi, the requested reporting feature is not available yet. We suggest using current filters and exports as a workaround."</p>
+      <p><strong>Sample Reply:</strong> "Hi, the feature will be available in the next release. Please see attached documentation for guidance in the meantime."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
     <!-- Ticket 009 -->
-    <div class="ticket performance">
-      <h3><span class="icon">📊</span> Data Export Issue</h3>
-      <span class="badge medium">Medium</span>
-      <span class="badge normal">Normal</span>
-      <p><strong>Issue:</strong> Customer cannot export large dataset.</p>
-      <ul>
-        <li>Tested smaller datasets.</li>
-        <li>Suggested batch export workaround.</li>
-      </ul>
-      <p><strong>Sample Reply:</strong> "Hi, for large datasets we recommend batch exports. Please try exporting in smaller batches."</p>
-      <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
-    </div>
-
-    <!-- Ticket 010 -->
     <div class="ticket bug">
       <h3><span class="icon">⚠️</span> Mobile App Crash</h3>
       <span class="badge hard">Hard</span>
       <span class="badge high">High</span>
-      <p><strong>Issue:</strong> Mobile app crashes on launch.</p>
+      <span class="badge type">Livechat</span>
+      <span class="badge involvement">Screenshare</span>
       <ul>
         <li>Gathered device info and logs.</li>
         <li>Guided user to reinstall app.</li>
@@ -289,23 +280,22 @@
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
-    <!-- Ticket 011 -->
+    <!-- Ticket 010 -->
     <div class="ticket partner">
       <h3><span class="icon">📡</span> Partner / Carrier Issue</h3>
       <span class="badge hard">Hard</span>
       <span class="badge urgent">Urgent</span>
-      <p><strong>Issue:</strong> Customer reports service disruption in VOIP application.</p>
+      <span class="badge type">Call</span>
+      <span class="badge involvement">Partner</span>
       <ul>
-        <li>Investigated internally; confirmed issue external (carrier-related).</li>
+        <li>Investigated internally; confirmed external issue (carrier-related).</li>
         <li>Logged incident in Jira for engineering visibility.</li>
         <li>Placed ticket on hold and informed carrier.</li>
         <li>Monitored carrier resolution progress.</li>
         <li>Carrier resolved issue and provided RCA.</li>
-        <li>Reviewed and adjusted RCA internally.</li>
-        <li>Shared final RCA with customer ensuring clarity.</li>
+        <li>Internal RCA adapted and shared with customer for clarity.</li>
       </ul>
-      <p><strong>Tools/Skills Applied:</strong> Zendesk, Jira, Partner Communication, Problem-solving, RCA Review</p>
-      <p><strong>Sample Reply:</strong> "Hi, the VOIP disruption has been resolved in coordination with our partner. Attached is the RCA for your reference."</p>
+      <p><strong>Sample Reply:</strong> "Hi, the issue was caused by our carrier. It has been resolved, and we have attached the detailed RCA for your reference."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
@@ -313,15 +303,15 @@
 </section>
 
 <footer>
-  Portfolio created to demonstrate practical application support skills.
+  <p>Isa Santos | Simulated Tickets Portfolio</p>
 </footer>
 
 <script>
-function copyText(btn) {
-  const reply = btn.previousElementSibling.innerText;
+function copyText(button) {
+  const reply = button.previousElementSibling.textContent.replace('Sample Reply: ', '');
   navigator.clipboard.writeText(reply).then(() => {
-    btn.innerText = "Copied!";
-    setTimeout(()=> btn.innerText = "Copy Reply", 1500);
+    button.textContent = 'Copied!';
+    setTimeout(() => button.textContent = 'Copy Reply', 1500);
   });
 }
 </script>
