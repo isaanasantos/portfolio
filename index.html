@@ -17,15 +17,15 @@
   header {
     background-color: #8a663f;
     color: #fffbf5;
-    padding: 40px 20px;
+    padding: 20px 20px;
     text-align: center;
   }
-  header h1 { font-size: 2.5em; margin-bottom: 10px; }
-  header p { font-size: 1.1em; margin-bottom: 5px; }
+  header h1 { font-size: 2em; margin-bottom: 5px; }
+  header p { font-size: 1em; margin-bottom: 5px; }
 
   section {
     max-width: 900px;
-    margin: 40px auto;
+    margin: 30px auto;
     padding: 0 20px;
   }
 
@@ -45,7 +45,7 @@
     left: 0;
   }
 
-  .ticket, .certificate {
+  .ticket {
     background-color: #fffbf5;
     border-left: 5px solid #8a663f;
     padding: 20px;
@@ -54,24 +54,24 @@
     border-radius: 8px;
     transition: transform 0.2s;
   }
-  .ticket:hover, .certificate:hover { transform: translateY(-3px); }
+  .ticket:hover { transform: translateY(-3px); }
 
-  .ticket h3, .certificate h3 { color: #8a663f; margin-bottom: 10px; }
-  .ticket p, .certificate p { margin-bottom: 5px; }
+  .ticket h3 { color: #8a663f; margin-bottom: 10px; }
+  .ticket p { margin-bottom: 10px; }
 
   footer {
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     font-size: 0.9em;
     color: #666;
     border-top: 1px solid #8a663f;
     margin-top: 50px;
   }
 
-  /* Botões para links externos */
+  /* Botões */
   .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 8px 18px;
     margin-top: 10px;
     background-color: #8a663f;
     color: #fffbf5;
@@ -86,81 +86,78 @@
 
 <header>
   <h1>Isa Santos</h1>
-  <p>Customer Support / Application Support Specialist</p>
-  <p>Welcome to my Public Portfolio. Thank you for your interest, I hope we get a chance to connect!</p>
+  <p>Application Support / Customer Support Specialist</p>
   <a class="btn" href="https://www.linkedin.com/in/aisacsantos/" target="_blank">LinkedIn</a>
 </header>
-
-<section>
-  <h2>Profile</h2>
-  <p>Customer support professional with over 3 years of experience in customer-facing roles. Developed strong soft skills such as communication, empathy, problem-solving, and conflict resolution. Trained in ticketing systems and familiar with technical workflows. Motivated to contribute as an Application Support Specialist.</p>
-</section>
-
-<section>
-  <h2>Skills</h2>
-  <ul>
-    <li>Customer-facing support & problem-solving</li>
-    <li>Ticket management (Zendesk, Jira, Freshdesk)</li>
-    <li>Cybersecurity fundamentals</li>
-    <li>Workflow coordination & teamwork</li>
-    <li>Effective communication & empathy</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Certifications</h2>
-  <div class="certificate">
-    <h3>Cyber Security – Oxford Home Study Center (Apr 2025)</h3>
-    <p>Skills: Information Security, Security Management</p>
-  </div>
-  <div class="certificate">
-    <h3>Problem Solving – Oxford Home Study Center (Apr 2025)</h3>
-    <p>Skills: Problem Resolution</p>
-  </div>
-  <div class="certificate">
-    <h3>Communication Skills – Oxford Home Study Center (Mar 2025)</h3>
-    <p>Skills: Interpersonal Communication</p>
-  </div>
-  <div class="certificate">
-    <h3>Customer Services – Oxford Home Study Center (Mar 2025)</h3>
-    <p>Skills: Customer Support</p>
-  </div>
-  <div class="certificate">
-    <h3>Generative AI – Santander Open Academy (Mar 2025)</h3>
-    <p>Skills: Artificial Intelligence</p>
-  </div>
-</section>
 
 <section>
   <h2>Simulated Tickets</h2>
 
   <div class="ticket">
     <h3>Ticket 001 – Login Issue</h3>
-    <p><strong>Issue:</strong> Customer unable to login to web portal</p>
-    <p><strong>Steps:</strong> Verified credentials, guided password reset</p>
-    <p><strong>Resolution:</strong> Customer logged in successfully</p>
+    <p><strong>Issue:</strong> Customer cannot access web portal after multiple login attempts.</p>
+    <p><strong>Steps Taken:</strong></p>
+    <ul>
+      <li>Verified customer identity and account status.</li>
+      <li>Checked for active service outages affecting login.</li>
+      <li>Guided customer through password reset process.</li>
+      <li>Ensured account was unlocked and credentials updated.</li>
+    </ul>
+    <p><strong>Tools/Skills Applied:</strong> Zendesk, Email support, Troubleshooting, Communication, Problem-solving</p>
+    <p><strong>Resolution:</strong> Customer successfully logged in.</p>
+    <p><strong>Sample Reply:</strong> "Hello [Customer Name], your account has been successfully reset. Please try logging in and let us know if any issues remain."</p>
   </div>
 
   <div class="ticket">
     <h3>Ticket 002 – Report Generation Error</h3>
-    <p><strong>Issue:</strong> Monthly report fails to generate</p>
-    <p><strong>Steps:</strong> Replicated issue, checked permissions, cleared cache</p>
-    <p><strong>Resolution:</strong> Escalated to Tier 2, issue resolved</p>
+    <p><strong>Issue:</strong> Monthly report fails to generate for finance department.</p>
+    <p><strong>Steps Taken:</strong></p>
+    <ul>
+      <li>Replicated issue in test environment.</li>
+      <li>Checked user permissions and report configuration.</li>
+      <li>Cleared cache and retried report generation.</li>
+      <li>Escalated to Tier 2 for deeper technical review.</li>
+    </ul>
+    <p><strong>Tools/Skills Applied:</strong> Jira, Troubleshooting, Communication, Workflow Coordination</p>
+    <p><strong>Resolution:</strong> Issue resolved after Tier 2 intervention, report generated successfully.</p>
+    <p><strong>Sample Reply:</strong> "Hello [Customer Name], the report generation issue has been resolved. Please check your report and confirm everything looks correct."</p>
   </div>
 
   <div class="ticket">
     <h3>Ticket 003 – Password Reset</h3>
-    <p><strong>Issue:</strong> Customer forgot password</p>
-    <p><strong>Steps:</strong> Verified identity, reset password, confirmed access</p>
-    <p><strong>Resolution:</strong> Access restored successfully</p>
+    <p><strong>Issue:</strong> Customer forgot password and is locked out of account.</p>
+    <p><strong>Steps Taken:</strong></p>
+    <ul>
+      <li>Verified customer identity using security questions.</li>
+      <li>Reset password through ticketing system.</li>
+      <li>Confirmed customer could log in successfully.</li>
+      <li>Provided tips for future password management.</li>
+    </ul>
+    <p><strong>Tools/Skills Applied:</strong> Zendesk, Email support, Customer Communication, Problem-solving</p>
+    <p><strong>Resolution:</strong> Customer access restored.</p>
+    <p><strong>Sample Reply:</strong> "Hi [Customer Name], your password has been reset, and you should now have access. Let us know if any issues persist."</p>
+  </div>
+
+  <div class="ticket">
+    <h3>Ticket 004 – Application Bug</h3>
+    <p><strong>Issue:</strong> Customer reports unexpected error when submitting form.</p>
+    <p><strong>Steps Taken:</strong></p>
+    <ul>
+      <li>Gathered screenshots and error logs from customer.</li>
+      <li>Tested form submission in staging environment.</li>
+      <li>Identified misconfiguration causing error.</li>
+      <li>Escalated to the developer team with detailed notes.</li>
+    </ul>
+    <p><strong>Tools/Skills Applied:</strong> Jira, Bug Reporting, Technical Troubleshooting, Communication</p>
+    <p><strong>Resolution:</strong> Bug fixed by the developer team, customer confirmed submission successful.</p>
+    <p><strong>Sample Reply:</strong> "Hello [Customer Name], the issue with the form has been resolved. Please try submitting again and let us know if it works."</p>
   </div>
 
 </section>
 
 <footer>
-  Portfolio created to demonstrate skills and certifications
+  Portfolio created to demonstrate practical application of support skills.
 </footer>
 
 </body>
 </html>
-
