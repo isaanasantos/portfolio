@@ -152,10 +152,9 @@
       <span class="badge type">Call</span>
       <ul>
         <li>Attempted identity verification via security questions.</li>
-        <li>Verification failed; escalated to Managers via Slack.</li>
-        <li>Managers informed CSM to contact customer.</li>
+        <li>Verification failed; will contact account admin to confirm legitimacy of request.</li>
       </ul>
-      <p><strong>Sample Reply:</strong> "Hello, following internal verification, your account reset has been completed by our CSM."</p>
+      <p><strong>Sample Reply:</strong> "Hello, the identity verification tests failed. We will contact your account admin to confirm this request."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
@@ -198,11 +197,13 @@
       <span class="badge easy">Easy</span>
       <span class="badge low">Low</span>
       <span class="badge type">Email</span>
+      <span class="badge involvement">CSM</span>
       <ul>
         <li>Explained current capabilities.</li>
         <li>Suggested workaround using existing features.</li>
+        <li>Added CSM to ticket so they can create capability request with Product Team if desired.</li>
       </ul>
-      <p><strong>Sample Reply:</strong> "Hi, the requested reporting feature is not available yet. We suggest using current filters and exports as a workaround."</p>
+      <p><strong>Sample Reply:</strong> "Hi, the requested reporting feature is not available yet. We suggest using current filters and exports as a workaround. The CSM has been added to create a capability request if needed."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
@@ -212,12 +213,13 @@
       <span class="badge easy">Easy</span>
       <span class="badge normal">Normal</span>
       <span class="badge type">Email</span>
+      <span class="badge involvement">Billing Team</span>
       <ul>
         <li>Reviewed billing request.</li>
         <li>Determined issue is outside our support scope.</li>
-        <li>Added ticket note and informed CSM, who will respond to customer.</li>
+        <li>Added ticket note and informed Billing Team, who will respond to customer.</li>
       </ul>
-      <p><strong>Sample Reply:</strong> "Hi, your billing inquiry has been forwarded to our CSM team who will respond as soon as possible. Thank you for your patience."</p>
+      <p><strong>Sample Reply:</strong> "Hi, your billing inquiry has been forwarded to our Billing Team who will respond as soon as possible. Thank you for your patience."</p>
       <button class="copy-btn" onclick="copyText(this)">Copy Reply</button>
     </div>
 
@@ -241,7 +243,6 @@
       <span class="badge medium">Medium</span>
       <span class="badge high">High</span>
       <span class="badge type">Livechat</span>
-      <span class="badge involvement">Escalation 2nd</span>
       <ul>
         <li>Guided through MFA reset procedure.</li>
         <li>Verified identity and re-enabled access.</li>
@@ -289,7 +290,7 @@
       <span class="badge involvement">Partner</span>
       <ul>
         <li>Investigated internally; confirmed external issue (carrier-related).</li>
-        <li>Logged incident in Jira for engineering visibility.</li>
+        <li>Logged incident in Jira for visibility.</li>
         <li>Placed ticket on hold and informed carrier.</li>
         <li>Monitored carrier resolution progress.</li>
         <li>Carrier resolved issue and provided RCA.</li>
